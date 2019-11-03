@@ -1,0 +1,22 @@
+{
+  "triage":{
+      "base":{
+        "c":"C:\\Users\\hengyi\\Google Drive\\DocumentsArchive\\Corporate\\",
+        "O":"C:\\Users\\hengyi\\Google Drive\\DocumentsArchive\\Other\\",
+        "h":"C:\\Users\\hengyi\\Downloads\\receipts"
+      },
+      "categories":{
+        "mc":"买菜",
+        "yf":"衣服"，
+        "qy":"汽油或车",
+        "jy":"教育",
+        "ry":"日用品",
+        "fd":"饭店",
+        "ly":"旅游",
+        "jj":"家居",
+        "yl":"医疗",
+        "dz":"电子产品",
+        "mp":"门票"
+      }
+    }
+}
