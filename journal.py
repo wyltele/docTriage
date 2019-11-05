@@ -42,14 +42,13 @@ class receipt_entry:
 	def move_and_log(self):
 		if self.valid:
 			if self.misc in self.cfg["triage"]["categories"]:
-				to_dir=self.cfg["triage"]["base"][self.type]+self.cfg["triage"]["categories"][self.misc]
-			else:
-				to_dir=self.cfg["triage"]["base"][self.type]+self.misc
+				misc=self.cfg["triage"]["categories"][self.misc]
+			to_dir=self.cfg["triage"]["base"][self.type]+misc
 			if not os.path.exists(to_dir):
 				os.makedirs(to_dir)
 			shutil.move(self.fname,to_dir)
 			ws=self.wb[self.cfg["triage"]["sheets"][self.type]]
-			ws.append([self.date,self.amount,self.merchant,self.misc])
+			ws.append([self.date,self.amount,self.merchant,misc])
 
 def main():
 	journal().run()
