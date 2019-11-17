@@ -52,7 +52,7 @@ class receipt_entry:
 			else:
 				shutil.move(self.fname,to_dir)
 				ws=self.wb[self.cfg["triage"]["sheets"][self.type]]
-				ws.append([self.date,self.amount,self.merchant,misc])
+				ws.append([self.date,float(self.amount),self.merchant,misc])
 
 def main():
 	journal().run()
