@@ -46,9 +46,13 @@ class receipt_entry:
 			to_dir=self.cfg["triage"]["base"][self.type]+misc
 			if not os.path.exists(to_dir):
 				os.makedirs(to_dir)
-			shutil.move(self.fname,to_dir)
-			ws=self.wb[self.cfg["triage"]["sheets"][self.type]]
-			ws.append([self.date,self.amount,self.merchant,misc])
+			to_dir=to_dir+"\\"+os.path.basename(self.fname)
+			if os.path.exists(to_dir):
+				os.remove(self.fname)
+			else:
+				shutil.move(self.fname,to_dir)
+				ws=self.wb[self.cfg["triage"]["sheets"][self.type]]
+				ws.append([self.date,self.amount,self.merchant,misc])
 
 def main():
 	journal().run()
