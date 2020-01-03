@@ -41,6 +41,7 @@ class receipt_entry:
 			self.merchant=fields[4]
 	def move_and_log(self):
 		if self.valid:
+			misc=self.misc
 			if self.misc in self.cfg["triage"]["categories"]:
 				misc=self.cfg["triage"]["categories"][self.misc]
 			to_dir=self.cfg["triage"]["base"][self.type]+misc
